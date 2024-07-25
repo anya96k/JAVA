@@ -15,7 +15,7 @@ if(year%4==0&&month>2)
 daypassed=daypassed+1;
 }
 System.out.println(datpassed);
-year=year-1;
+year=year+1;
 int mf=year%400;
 int y=mf/100;
 int totalyear=mf%100;
