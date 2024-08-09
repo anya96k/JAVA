@@ -1,3 +1,4 @@
+import java.util.*;
 public class Saving 
 {
     private double savingBalance;
@@ -30,8 +31,14 @@ public class Saving
   
     public static void main(String[] args)
      {
-        Saving saver1 = new Saving(2000.00);
-        Saving saver2 = new Saving(3000.00);
+   Scanner sc=new Scanner(System.in);
+   System.out.println("enter the bal saver1 before Interest:");
+       double a=sc.nextDouble();
+  System.out.println("enter the bal saver2 before Interest:");
+        double b=sc.nextDouble();
+
+        Saving saver1 = new Saving(a);
+        Saving saver2 = new Saving(b);
 
         Saving.modifyInterestRate(4.0);
         System.out.println("Balance with 4% Interest:");
