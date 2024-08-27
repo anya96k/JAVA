@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class BillingSystem {
+
+ 
+    private static void printBill(String[] items, double[] prices, int[] quantities) {
+        double totalAmount = 0.0;
+        System.out.println("---------- BILL ----------");
+        System.out.printf("%-20s %10s %10s %10s\n", "Item", "Price", "Qty", "Total");
+        System.out.println("--------------------------");
+
+        for (int i = 0; i < items.length; i++) {
+            double itemTotal = prices[i] * quantities[i];
+            totalAmount += itemTotal;
+            System.out.printf("%-20s $%9.2f %10d $%9.2f\n", items[i], prices[i], quantities[i], itemTotal);
+        }
+
+        System.out.println("--------------------------");
+        System.out.printf("%-20s $%9.2f\n", "Total Amount", totalAmount);
+        System.out.println("--------------------------");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+     
+        int numberOfItems = 3;
+
+        String[] items = new String[numberOfItems];
+        double[] prices = new double[numberOfItems];
+        int[] quantities = new int[numberOfItems];
+
+        for (int i = 0; i < numberOfItems; i++) {
+            System.out.print("Enter item name: ");
+            items[i] = scanner.nextLine();
+
+            System.out.print("Enter item price: ");
+            prices[i] = scanner.nextDouble();
+
+            System.out.print("Enter item quantity: ");
+            quantities[i] = scanner.nextInt();
+            scanner.nextLine(); 
+        }
+
+        printBill(items, prices, quantities);
+
+        scanner.close();
+    }
+}
