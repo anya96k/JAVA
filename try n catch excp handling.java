@@ -38,7 +38,7 @@ class exception {
                 int result = num / divisor;
                 System.out.println(num + " / " + divisor + " = " + result);
             } 
-            catch (ArithmeticException e) {
+            catch (Exception e) {
                 System.out.println("Error: Division by zero for number " + num);
             }
         }
